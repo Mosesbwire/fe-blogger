@@ -1,8 +1,24 @@
 import '../styles/style.css'
-import { router } from './router'
+
+import { login } from './login'
+import { Router } from './router'
+
+Router()
 
 
-router()
+
+document.addEventListener('submit', (event)=>{
+    event.preventDefault()
+    if(event.target.id === 'login-form'){
+        login().then((response)=>{
+            if(response){
+                location.pathname = '/home'
+                Router()
+            }
+        })
+    }
+   
+})
 
 
 

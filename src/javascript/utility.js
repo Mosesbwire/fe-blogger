@@ -12,9 +12,29 @@ function createElement(type, attrs = {}){
     return element
 }
 
+function createLink(attr){
+    return createElement('a', attr)
+}
+
+function createList(attr){
+    return createElement('ul',attr)
+}
+
+function createListItem(attr){
+    return createElement('li', attr)
+}
+
+function createButton(attr){
+    return createElement('button', attr)
+}
+
 
 
 
 export {
-    createElement
+    createElement,
+    createLink,
+    createButton,
+    createListItem,
+    createList
 }

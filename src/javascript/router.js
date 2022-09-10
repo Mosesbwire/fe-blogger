@@ -1,11 +1,16 @@
 import { generateLoginPage} from './login'
 import { generateSignupPage} from './signup'
+import { generateHomePage } from './home'
 
-function router (){
+function Router (){
+
     const routes = {
         '/': generateLoginPage,
         '/login': generateLoginPage,
         '/signup': generateSignupPage,
+        
+        '/home': generateHomePage,
+        
     }
 
     const navigateTo = (url)=>{
@@ -14,6 +19,7 @@ function router (){
     }
     const router = async function(){
         let view = routes[window.location.pathname]
+        
         if (view === undefined){
             // create 404 page
             return `<p>404 error page not found</p>`
@@ -21,19 +27,20 @@ function router (){
 
        view()
     }
+
+    window.addEventListener('popstate', router)
     document.addEventListener('DOMContentLoaded', ()=>{
         router()
-    
         document.body.addEventListener('click', (event)=>{
-        
             if (event.target.classList.contains('signin-link')){
                 event.preventDefault()
                 navigateTo(event.target.href)
             }
         })
     })
+
 }
 
 export {
-    router
+    Router
 }
