@@ -62,8 +62,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Hadithi',
       filename: 'index.html',
-      template: 'src/templates/signin.html',
+      template: 'src/templates/index.html',
     }),
+    
     new BundleAnalyzerPlugin(),
   ],
 }
