@@ -6,15 +6,25 @@ import tab  from '../components/tab'
 import { tabMenu} from '../components/tabMenu'
 
 import { feed } from '../components/feed'
+
+import { savedArticleSection } from '../components/savedArticles'
+import { followSuggestion } from '../components/followSuggestion'
 import aside from '../components/aside'
 
 
+
+
 let tabLinks = [
-    tab({href: '#', innerText: 'For you', class: 'tab-link nav-text'}),
-    tab({href: '#', innerText: 'Following', class: 'tab-link nav-text'})
+    tab({href: '#', innerText: 'For you', class: 'tab-link secondary-text'}),
+    tab({href: '#', innerText: 'Following', class: 'tab-link secondary-text'})
 ]
 
 let tabNavigation = tabMenu(tabLinks)
+
+let asideElements = [
+    followSuggestion(),
+    savedArticleSection()
+]
 
 
 function generateHomePage(){
@@ -27,7 +37,7 @@ function generateHomePage(){
     main.append(tabNavigation,feed())
 
 
-    wrapper.append(main,aside())
+    wrapper.append(main,aside(asideElements))
 
     root.append(wrapper)
 

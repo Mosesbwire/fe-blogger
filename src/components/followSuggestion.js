@@ -7,10 +7,10 @@ import { createElement } from "../javascript/utility";
 function buildFollowProfile(user){
     let div = createElement('div', {class: 'grid-container follow-details'})
     let bioContainer = createElement('div', {})
-    let userimg = userImage({class:'wt-user-img', src: user.image})
-    let userName = username({class:'wt-name title-primary', innerText: user.username})
-    let bio = createElement('div',{class: 'wt-bio muted-text', innerText: user.bio})
-    let btn = button({class: 'button wt-btn', innerText: 'Follow'})
+    let userimg = userImage({class:'wt-user-img profile-img-md', src: user.image})
+    let userName = username({class:'wt-name secondary-title-bd', innerText: user.username})
+    let bio = createElement('div',{class: 'wt-bio secondary-text-sm', innerText: user.bio})
+    let btn = button({class: 'button wt-btn secondary-text-dark', innerText: 'Follow'})
     let link = createElement('a', {class: 'wt-btn-link', href: '#'})
     link.append(btn)
     bioContainer.append(userName, bio)
@@ -39,13 +39,13 @@ function followSuggestion(){
     ]
 
     let container = createElement('div', {class: 'follow container'})
-    let h2 = createElement('h2', {class:'wt-title', innerText: 'Who to follow'})
+    let h2 = createElement('h2', {class:'primary-title-sb', innerText: 'Who to follow'})
     container.append(h2)
     users.forEach((user)=>{
         container.append(buildFollowProfile(user))
     })
 
-    let link = createElement('a', {class: 'accented-link', innerText: 'See more suggestions'})
+    let link = createElement('a', {class: 'primary-text-accent', innerText: 'See more suggestions'})
     container.append(link)
 
     return container

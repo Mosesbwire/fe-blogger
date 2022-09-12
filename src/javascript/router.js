@@ -1,6 +1,7 @@
 import { generateLoginPage} from './login'
 import { generateSignupPage} from './signup'
 import { generateHomePage } from './home'
+import { buildArticlePage} from './article'
 
 function Router (){
 
@@ -8,8 +9,8 @@ function Router (){
         '/': generateLoginPage,
         '/login': generateLoginPage,
         '/signup': generateSignupPage,
-        
         '/home': generateHomePage,
+        '/article': buildArticlePage,
         
     }
 

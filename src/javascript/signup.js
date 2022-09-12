@@ -8,7 +8,7 @@ function createTitle(text){
 
     const attr = {
         innerText: text,
-        class: 'title-primary__signin'
+        class: 'title-primary-signin'
     }
 
     const title = createElement('h1',attr)
@@ -27,12 +27,12 @@ let formGroups = [
     formGroupBtn({class: 'form-group'}, {type:'submit',class: 'btn btn-signin', innerText: 'Sign up'}),   
 ]
 
-let signupForm = form({method: 'post', class: 'text-primary', id: 'signup-form'}, formGroups)
+let signupForm = form({method: 'post', class: 'primary-text', id: 'signup-form'}, formGroups)
 
 function toLoginLink(text,linkText, href){
-    let p = createElement('p', {class: 'text-primary', innerText: text})
+    let p = createElement('p', {class: 'primary-text-md', innerText: text})
     let span = createElement('span', {})
-    let a = createElement('a', {href: href,class: 'accented-link signin-link', innerText: linkText})
+    let a = createElement('a', {href: href,class: 'primary-text-accent-bold signin-link', innerText: linkText})
 
     span.appendChild(a)
     p.append(span)

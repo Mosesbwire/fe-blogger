@@ -1,14 +1,11 @@
 import {createElement} from '../javascript/utility'
 
-import { savedArticleSection } from './savedArticles'
-import { followSuggestion } from './followSuggestion'
-
-
-export default function aside(){
+export default function aside(sections){
     let aside = createElement('aside', {class: 'aside dt'})
 
-    aside.append(followSuggestion(), savedArticleSection())
+    sections.forEach(section => {
+        aside.append(section)
+    });
 
     return aside
-
 }

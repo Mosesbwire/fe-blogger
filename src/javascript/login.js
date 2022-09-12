@@ -11,13 +11,13 @@ let formGroups = [
     formGroupBtn({class: 'form-group'}, {type:'submit',class: 'btn btn-signin', innerText: 'Login'}),   
 ]
 
-let loginForm = form({method: 'post', class: 'text-primary', id: 'login-form'}, formGroups)
+let loginForm = form({method: 'post', class: 'primary-text', id: 'login-form'}, formGroups)
 
 function generateLoginPage(){
 
     let outerDiv = container()
     let div = outerDiv.querySelector('.signin-wrapper')
-    div.append(createTitle('Join Hadithi.'), loginForm, toLoginLink('No account? ','Create one', '/signup'))
+    div.append(createTitle('Welcome back.'), loginForm, toLoginLink('No account? ','Create one', '/signup'))
     document.getElementById('root').innerHTML = outerDiv.outerHTML
     
 }

@@ -6,11 +6,12 @@ import {createElement} from '../javascript/utility'
 
 function buildSavedArticle(article){
     let articleAttr = {
+        title: 'secondary-title-bd-sm',
         summary : 'display',
         image : 'display',
         footer : 'display',
     }
-    let userInfoSection = userInfo({class: 'article-owner flex-container'}, {src: article.userImage, class: 'profile-img'}, {innerText: article.username, class: 'text-primary'})
+    let userInfoSection = userInfo({class: 'article-owner flex-container'}, {src: article.userImage, class: 'profile-img'}, {innerText: article.username, class: 'primary-text-sm'})
     let div = createElement('div', {})
     div.innerHTML = articleSection(articleAttr,article)
     
@@ -22,7 +23,7 @@ function buildSavedArticle(article){
 
 function savedArticleSection(){
     let container = createElement('div', {class: 'recently-saved container'})
-    let h2 = createElement('h2', {class: 'wt-title', innerText: 'Recently saved'})
+    let h2 = createElement('h2', {class: 'primary-title-sb', innerText: 'Recently saved'})
 
     container.append(h2)
     let articles = [
@@ -57,7 +58,7 @@ function savedArticleSection(){
     })
 
 
-    let link = createElement('a', {class: 'accented-link', href: '#', innerText: 'See all (20)'})
+    let link = createElement('a', {class: 'primary-text-accent', href: '#', innerText: 'See all (20)'})
 
     container.append(link)
 
