@@ -41,11 +41,11 @@ let articles = [
 function authorSection(user){
     let wrapperDiv = createElement('div', {class: 'flex-container container'})
     let divInfo = createElement('div', {})
-    let articleInfo = createElement('div', {class: 'flex-container muted-text'})
+    let articleInfo = createElement('div', {class: 'flex-container'})
 
     let image = userImage({class: 'profile-img-md', src: user.image})
-    let name = username({class: 'primary-text', innerText: user.username})
-    let date = createElement('p', {innerText: user.published, class: 'secondary-text'})
+    let name = username({class: 'primary-text ml-3', innerText: user.username})
+    let date = createElement('p', {innerText: user.published, class: 'secondary-text ml-3'})
     let readTime = createElement('p', {innerText: user.read, class: 'secondary-text'})
 
     articleInfo.append(date,readTime)
@@ -57,11 +57,11 @@ function authorSection(user){
 }
 
 function userDetails(user){
-    let wrapper = createElement('div', {class: 'container'})
-    let userinfo = userInfo({}, {class: 'profile-img-lg', src: user.image}, {class: 'primary-title-sb', innerText: user.username})
-    let followerCount = createElement('p', {class: 'secondary-text-lg', innerText: user.followers}) 
+    let wrapper = createElement('div', {class: 'container mb-5'})
+    let userinfo = userInfo({}, {class: 'profile-img-lg mb-4', src: user.image}, {class: 'primary-title-sb', innerText: user.username})
+    let followerCount = createElement('p', {class: 'secondary-text-lg', innerText: `${user.followers} Followers`}) 
     userinfo.append(followerCount)
-    let bioText = createElement('p', {class: 'bio secondary-text', innerText: user.bio})
+    let bioText = createElement('p', {class: 'secondary-text pt-3 pb-4', innerText: user.bio})
     let followBtn = button({innerText: 'Follow', class: 'primary-text-md btn articlePg-follow-btn'})
 
     wrapper.append(userinfo,bioText,followBtn)
@@ -71,13 +71,13 @@ function userDetails(user){
 
 function moreArticles(user){
     let articleAttr = {
-        title: 'secondary-title-bd-sm',
+        title: 'secondary-title-bd-sm pt-5',
         summary : 'display',
         image : 'article-img-sm',
         footer : 'display',
     }
     let wrapper = createElement('div', {class: 'container'})
-    let title = createElement('h1', {innerText: 'More from Hadithi.', class: 'primary-title-sb'})
+    let title = createElement('h1', {innerText: 'More from Hadithi.', class: 'primary-title-sb pb-4'})
     
     wrapper.append(title)
 
@@ -85,7 +85,10 @@ function moreArticles(user){
         let div = createElement('div', {})
         div.innerHTML = articleSection(articleAttr, article)
         wrapper.append(userInfo({class: 'flex-container'}, {class: 'profile-img', src: user.image}, {innerText: user.username, class: 'primary-text-sm'}))
+        div.firstElementChild.classList.add('mb-5')
+
         wrapper.append(div.firstElementChild)
+        wrapper.lastElementChild.style.marginTop = '-30px'
     }) 
 
     return wrapper
@@ -95,7 +98,7 @@ function moreArticles(user){
 function buildArticlePage(){
     let root = document.getElementById('root')
     let wrapper = createElement('div', {class: 'body-wrapper'})
-    let main = createElement('main', {class: 'main'})
+    let main = createElement('main', {class: 'main mt-6'})
     
     let header = headerSection()
     root.append(header.firstElementChild)

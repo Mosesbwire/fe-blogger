@@ -4,7 +4,7 @@ import { form } from '../components/form'
 import { container } from '../components/signinContainer'
 
 function createTitle(text){
-    const titleContainer = createElement('div', {id: 'signin-title', class: "form-title"})
+    const titleContainer = createElement('div', {id: 'signin-title'})
 
     const attr = {
         innerText: text,
@@ -19,15 +19,15 @@ function createTitle(text){
 }
 
 let formGroups = [
-    formGroup({class: 'form-group'}, {for: 'firstname', innerText: 'First Name'}, {type:'text','name': 'firstname', required: 'true'}),
-    formGroup({class: 'form-group'}, {for: 'lastname', innerText: 'Last Name'}, {type:'text','name': 'lastname', required: 'true'}),
-    formGroup({class: 'form-group'}, {for: 'email', innerText: 'Email'}, {type:'email','name': 'email', required: 'true'}),
-    formGroup({class: 'form-group'}, {for: 'password', innerText: 'Password'}, {type:'password','name': 'password', required: 'true'}),
-    formGroup({class: 'form-group'}, {for: 'confirm-password', innerText: 'Confirm Password'}, {type:'password','name': 'confirm-password', required: 'true'}),
-    formGroupBtn({class: 'form-group'}, {type:'submit',class: 'btn btn-signin', innerText: 'Sign up'}),   
+    formGroup({class: 'form-group mb-4'}, {for: 'firstname', innerText: 'First Name', class: 'mb-2'}, {type:'text','name': 'firstname', required: 'true' ,class: 'pt-1 pb-1 pl-1'}),
+    formGroup({class: 'form-group mb-4'}, {for: 'lastname', innerText: 'Last Name', class: 'mb-2'}, {type:'text','name': 'lastname', required: 'true' ,class: 'pt-1 pb-1 pl-1'}),
+    formGroup({class: 'form-group mb-4'}, {for: 'email', innerText: 'Email', class: 'mb-2'}, {type:'email','name': 'email', required: 'true' ,class: 'pt-1 pb-1 pl-1'}),
+    formGroup({class: 'form-group mb-4'}, {for: 'password', innerText: 'Password', class: 'mb-2'}, {type:'password','name': 'password', required: 'true' ,class: 'pt-1 pb-1 pl-1'}),
+    formGroup({class: 'form-group mb-4'}, {for: 'confirm-password', innerText: 'Confirm Password', class: 'mb-2'}, {type:'password','name': 'confirm-password', required: 'true' ,class: 'pt-1 pb-1 pl-1'}),
+    formGroupBtn({class: 'form-group'}, {type:'submit', innerText: 'Sign up'}),   
 ]
 
-let signupForm = form({method: 'post', class: 'primary-text', id: 'signup-form'}, formGroups)
+let signupForm = form({method: 'post', class: 'primary-text mt-5 mb-5', id: 'signup-form'}, formGroups)
 
 function toLoginLink(text,linkText, href){
     let p = createElement('p', {class: 'primary-text-md', innerText: text})

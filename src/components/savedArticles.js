@@ -6,24 +6,25 @@ import {createElement} from '../javascript/utility'
 
 function buildSavedArticle(article){
     let articleAttr = {
-        title: 'secondary-title-bd-sm',
+        title: 'primary-title-sb',
         summary : 'display',
         image : 'display',
         footer : 'display',
     }
-    let userInfoSection = userInfo({class: 'article-owner flex-container'}, {src: article.userImage, class: 'profile-img'}, {innerText: article.username, class: 'primary-text-sm'})
+    let userInfoSection = userInfo({class: 'flex-container'}, {src: article.userImage, class: 'profile-img'}, {innerText: article.username, class: 'primary-text-sm'})
+    userInfoSection.style.marginBottom = "-5px"
     let div = createElement('div', {})
     div.innerHTML = articleSection(articleAttr,article)
     
-    let fullSection = createElement('div', {class: 'saved-item'})
+    let fullSection = createElement('div', {class: 'mb-4'})
 
     fullSection.append(userInfoSection, div.firstElementChild)
     return fullSection
 }
 
 function savedArticleSection(){
-    let container = createElement('div', {class: 'recently-saved container'})
-    let h2 = createElement('h2', {class: 'primary-title-sb', innerText: 'Recently saved'})
+    let container = createElement('div', {class: 'container mt-5'})
+    let h2 = createElement('h2', {class: 'primary-title-sb mb-4', innerText: 'Recently saved'})
 
     container.append(h2)
     let articles = [
@@ -58,7 +59,7 @@ function savedArticleSection(){
     })
 
 
-    let link = createElement('a', {class: 'primary-text-accent', href: '#', innerText: 'See all (20)'})
+    let link = createElement('a', {class: 'primary-text-accent more-link mt-5', href: '#', innerText: 'See all (20)'})
 
     container.append(link)
 

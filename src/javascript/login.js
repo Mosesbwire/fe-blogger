@@ -6,12 +6,12 @@ import {form} from '../components/form'
 import { container} from '../components/signinContainer'
 
 let formGroups = [
-    formGroup({class: 'form-group'}, {for: 'email', innerText: 'Email'}, {type:'email','name': 'email', required: 'true'}),
-    formGroup({class: 'form-group'}, {for: 'password', innerText: 'Password'}, {type:'password','name': 'password', required: 'true'}),
+    formGroup({class: 'form-group mb-4'}, {for: 'email', innerText: 'Email', class: 'mb-2'}, {type:'email','name': 'email', required: 'true' , class: 'pl-1 pt-1 pb-1'}),
+    formGroup({class: 'form-group mb-4'}, {for: 'password', innerText: 'Password',  class: 'mb-2'}, {type:'password','name': 'password', required: 'true' , class: 'pl-1 pt-1 pb-1'}),
     formGroupBtn({class: 'form-group'}, {type:'submit',class: 'btn btn-signin', innerText: 'Login'}),   
 ]
 
-let loginForm = form({method: 'post', class: 'primary-text', id: 'login-form'}, formGroups)
+let loginForm = form({method: 'post', class: 'primary-text mt-7 mb-5', id: 'login-form'}, formGroups)
 
 function generateLoginPage(){
 

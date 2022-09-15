@@ -5,13 +5,13 @@ import button from './button'
 import { createElement } from "../javascript/utility";
 
 function buildFollowProfile(user){
-    let div = createElement('div', {class: 'grid-container follow-details'})
-    let bioContainer = createElement('div', {})
-    let userimg = userImage({class:'wt-user-img profile-img-md', src: user.image})
-    let userName = username({class:'wt-name secondary-title-bd', innerText: user.username})
-    let bio = createElement('div',{class: 'wt-bio secondary-text-sm', innerText: user.bio})
-    let btn = button({class: 'button wt-btn secondary-text-dark', innerText: 'Follow'})
-    let link = createElement('a', {class: 'wt-btn-link', href: '#'})
+    let div = createElement('div', {class: 'grid-container follow-suggestions mb-3'})
+    let bioContainer = createElement('div', {class:'ml-2 mr-4'})
+    let userimg = userImage({class:'profile-img-md', src: user.image})
+    let userName = username({class:'secondary-title-bd', innerText: user.username})
+    let bio = createElement('div',{class: 'secondary-text-sm', innerText: user.bio})
+    let btn = button({class: 'button secondary-text-dark', innerText: 'Follow'})
+    let link = createElement('a', {class: '', href: '#'})
     link.append(btn)
     bioContainer.append(userName, bio)
     div.append(userimg, bioContainer, link)
@@ -38,17 +38,17 @@ function followSuggestion(){
 
     ]
 
-    let container = createElement('div', {class: 'follow container'})
-    let h2 = createElement('h2', {class:'primary-title-sb', innerText: 'Who to follow'})
+    let container = createElement('div', {class: 'container'})
+    let h2 = createElement('h2', {class:'primary-title-sb mb-3', innerText: 'Who to follow'})
     container.append(h2)
     users.forEach((user)=>{
         container.append(buildFollowProfile(user))
     })
 
-    let link = createElement('a', {class: 'primary-text-accent', innerText: 'See more suggestions'})
+    let link = createElement('a', {class: 'primary-text-accent more-link mt-5', innerText: 'See more suggestions'})
     container.append(link)
 
-    return container
+    return container 
 }
 
 export {

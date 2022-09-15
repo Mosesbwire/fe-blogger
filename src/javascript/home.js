@@ -15,8 +15,8 @@ import aside from '../components/aside'
 
 
 let tabLinks = [
-    tab({href: '#', innerText: 'For you', class: 'tab-link secondary-text'}),
-    tab({href: '#', innerText: 'Following', class: 'tab-link secondary-text'})
+    tab({href: '#', innerText: 'For you', class: 'secondary-text mr-5 brd-btm tab-link pb-3'}),
+    tab({href: '#', innerText: 'Following', class: 'secondary-text brd-btm tab-link pb-3 '})
 ]
 
 let tabNavigation = tabMenu(tabLinks)
@@ -32,8 +32,8 @@ function generateHomePage(){
     let wrapper = createElement('div', {class: 'body-wrapper'})
     let main = createElement('main', {class: 'main'})
     
-    let header = headerSection()
-    root.append(header.firstElementChild)
+    
+    root.append(headerSection())
     main.append(tabNavigation,feed())
 
 

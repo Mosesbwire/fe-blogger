@@ -11,14 +11,17 @@ function buildArticleSection(article){
         image : 'article-img-rg',
         footer : '',
     }
-    let userInfoSection = userInfo({class: 'article-owner flex-container'}, {src: article.userImage, class: 'profile-img'}, {innerText: article.username, class: 'author-name primary-text-md'})
-    let date = createElement('p', {class: 'secondary-text', innerText: article.published})
+    let userInfoSection = userInfo({class: 'flex-container'}, {src: article.userImage, class: 'profile-img'}, {innerText: article.username, class: 'primary-text-md'})
+    let date = createElement('p', {class: 'secondary-text ml-2', innerText: article.published})
     userInfoSection.append(date)
     let div = createElement('div', {})
     div.innerHTML = articleSection(articleAttr,article)
+    div.children[0].children[0].classList.add('article-home-page-dt')
     
-    let fullSection = createElement('div', {class: 'article'})
+    
+    let fullSection = createElement('div', {class: 'article  mb-4 pt-5 pb-3' })
 
+   
     fullSection.append(userInfoSection, div.firstElementChild)
     return fullSection
 }
